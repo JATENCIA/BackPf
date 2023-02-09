@@ -1,15 +1,21 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-MONGO_URL = `mongodb://{ process.env.MONGOUSER }:{ process.env.MONGOPASSWORD }@{ process.env.MONGOHOST }:{ process.env.MONGOPORT }`;
+process.env.MONGOHOST;
+process.env.MONGOPASSWORD;
+process.env.MONGOPORT;
+process.env.MONGOUSER;
+
+const MONGO_URL =
+  "mongodb://{MONGOUSER}:{MONGOPASSWORD}@{ MONGOHOST}:{MONGOPORT}";
 
 const MONGODB = () => {
   mongoose.set("strictQuery", true);
   mongoose
     .connect(process.env.MONGODB_URL)
-    .then(() => console.log("Connected to MongoDB"))
+    .then(() => console.log("Connected to MongoDB-URL"))
     .catch((error) =>
-      console.error("Error connection to MongoDB", error.message)
+      console.error("Error connection to MongoDB-URL", error.message)
     );
 };
 
