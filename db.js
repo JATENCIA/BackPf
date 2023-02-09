@@ -4,7 +4,7 @@ require("dotenv").config();
 const MONGODB = () => {
   mongoose.set("strictQuery", true);
   mongoose
-    .connect(process.env.MONGODB_URI)
+    .connect(process.env.MONGODB_URL)
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) =>
       console.error("Error connection to MongoDB", error.message)
