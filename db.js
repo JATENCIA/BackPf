@@ -6,7 +6,7 @@ process.env.MONGOPASSWORD;
 process.env.MONGOPORT;
 process.env.MONGOUSER;
 
-const MONGO_URL = `mongodb://MONGOUSER:MONGOPASSWORD@MONGOHOST:MONGOPORT`;
+const MONGO_URL = `mongodb://MONGOUSER:MONGOPASSWORD@containers-us-west-147.railway.app:6604`;
 
 const MONGODB = () => {
   mongoose.set("strictQuery", true);
